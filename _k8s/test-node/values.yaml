@@ -1,0 +1,40 @@
+# values.yaml
+replicaCount: 1
+
+image:
+  repository: your-docker-repo/cardano-node
+  tag: latest
+  pullPolicy: IfNotPresent
+
+containerPort: 3001
+
+env:
+  TEMPLATE_DIR: "$IOHK_NIX/cardano-lib/testnet-template"
+  SECURITY_PARAM: 432
+  NUM_GENESIS_KEYS: 7
+  SLOT_LENGTH: 1000
+  TESTNET_MAGIC: 2
+  START_TIME: "2022-08-11T14:00:00Z"
+  PRJ_ROOT: "/root/testnode/cardano-world"
+  GENESIS_DIR: "workbench/custom"
+  ENV_NAME: "preview"
+
+resources: 
+  limits:
+    memory: "4Gi"
+    cpu: "2"
+  requests:
+    memory: "2Gi"
+    cpu: "1"
+
+nodeConfig:
+  configPath: "/root/testnode/cardano-world/workbench/custom/config.json"
+  dbPath: "~/.local/share/bitte/cardano/db-preview/node"
+  topologyPath: "/root/testnode/cardano-world/workbench/custom/topology.json"
+  kesKeyPath: "/root/testnode/cardano-world/workbench/custom/delegate-keys/shelley.000.kes.skey"
+  vrfKeyPath: "/root/testnode/cardano-world/workbench/custom/delegate-keys/shelley.000.vrf.skey"
+  operationalCertPath: "/root/testnode/cardano-world/workbench/custom/delegate-keys/shelley.000.opcert.json"
+
+service:
+  type: ClusterIP
+  port: 3001

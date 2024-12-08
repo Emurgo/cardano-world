@@ -65,9 +65,9 @@
     # --------------------------------------------------------------
 
     # --- Bridge Heads----------------------------------------------
-    cardano-db-sync.url = "github:input-output-hk/cardano-db-sync/13.0.4";
+    cardano-db-sync.url = "github:input-output-hk/cardano-db-sync/13.6.0.4";
     cardano-faucet.url = "github:input-output-hk/cardano-faucet/node-8.3";
-    cardano-node.url = "github:input-output-hk/cardano-node/8.5.0-pre";
+    cardano-node.url = "github:input-output-hk/cardano-node/10.1.3";
     cardano-wallet.url = "github:input-output-hk/cardano-wallet/v2022-07-01";
     offchain-metadata-tools = {
       url = "github:input-output-hk/offchain-metadata-tools/pg-cli-mods";
@@ -85,15 +85,15 @@
     };
 
     ogmios = {
-      url = "github:CardanoSolutions/ogmios/v5.5.5";
+      url = "github:CardanoSolutions/ogmios/v6.9.0";
       flake = false;
     };
     # --------------------------------------------------------------
 
     # --- Explorer Specific ----------------------------------------
-    explorer-cardano-db-sync.url = "github:input-output-hk/cardano-db-sync/13.1.1.3";
+    explorer-cardano-db-sync.url = "github:input-output-hk/cardano-db-sync/13.6.0.4";
 
-    explorer-cardano-node.url = "github:input-output-hk/cardano-node/8.1.1";
+    explorer-cardano-node.url = "github:input-output-hk/cardano-node/10.1.3";
 
     explorer-cardano-explorer-app = {
       url = "github:cardano-foundation/cardano-explorer-app/sunset";

@@ -121,16 +121,13 @@
     inherit (inputs.nixpkgs) lib;
     cloud = inputs.self.${system}.cloud;
     system = "x86_64-linux";
-  in {
-  packages.x86_64-linux.cardano-node = let
+  in
+    inputs.std.growOn {
+     packages.x86_64-linux.cardano-node = let
     pkgs = import inputs.nixpkgs { system = "x86_64-linux"; };
     cardanoNode = pkgs.callPackage inputs.cardano-node { };
   in
     cardanoNode;
-
-}
-  in
-    inputs.std.growOn {
       inherit inputs;
       cellsFrom = ./nix;
       #debug = ["cells" "cloud" "packages"];

@@ -119,6 +119,7 @@
   };
 outputs = inputs: let
   inherit (inputs.nixpkgs) lib;
+ cloud = inputs.self.${system}.cloud;
   system = "x86_64-linux";
 in {
   # Expose cardano-node at the correct path
@@ -129,11 +130,6 @@ in {
     cardanoNode;
 };
 
-
-  outputs = inputs: let
-    inherit (inputs.nixpkgs) lib;
-    cloud = inputs.self.${system}.cloud;
-    system = "x86_64-linux";
   in
     inputs.std.growOn {
 

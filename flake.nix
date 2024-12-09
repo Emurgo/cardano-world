@@ -128,7 +128,7 @@ in {
     cardanoNode = pkgs.callPackage inputs.cardano-node { };
   in
     cardanoNode;
-};
+}
 
   in
     inputs.std.growOn {

@@ -24,20 +24,6 @@ RUN nix-channel --add https://nixos.org/channels/nixos-22.05 nixos \
 RUN nix-env -iA nixpkgs.haskellPackages.ghc \
              nixpkgs.haskellPackages.cabal-install \
              nixpkgs.libsodium
-#            nixpkgs.gcc \
-#            nixpkgs.libtool \
-#            nixpkgs.make \
-#            nixpkgs.zlib
-
-# Clone the cardano-node repository and build it
-#RUN git clone https://github.com/input-output-hk/cardano-node.git /root/cardano-node \
-#    && cd /root/cardano-node \
-#    && git fetch --all --tags \
-#    && git checkout $(git describe --tags --abbrev=0) \
-#    && cabal update \
-#    && cabal build all
-# Set the working directory
-
 RUN git clone https://github.com/IntersectMBO/cardano-world.git
 WORKDIR /cardano-world
 RUN wget https://book.play.dev.cardano.org/environments/preprod/config.json && wget https://book.play.dev.cardano.org/environments/preprod/topology.json && wget https://book.play.dev.cardano.org/environments/preprod/byron-genesis.json && wget https://book.play.dev.cardano.org/environments/preprod/shelley-genesis.json && wget https://book.play.dev.cardano.org/environments/preprod/alonzo-genesis.json && wget https://book.play.dev.cardano.org/environments/preprod/conway-genesis.json

@@ -127,7 +127,7 @@ in {
     cardanoNode = pkgs.callPackage inputs.cardano-node { };
   in
     cardanoNode;
-}
+};
 
 
   outputs = inputs: let
